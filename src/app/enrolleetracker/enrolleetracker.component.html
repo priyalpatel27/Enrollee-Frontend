@@ -1,0 +1,34 @@
+<!-- the enrollee tracker component which will show the list of enrollees using datatable -->
+
+<p>The following is the list of enrollees. You can edit an enrollee by clicking on the edit icon for the enrollee in the
+    last column. You can also sort the table using any column. Search functionality is also available if you would like
+    to search for a particular enrollee.</p>
+
+<table datatable class="table" [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="enrollee_table" class="display">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Active</th>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- populate each row of table using angular variable enrollees -->
+        <tr *ngFor="let enrollee of enrollees">
+            <td>{{enrollee.id}}</td>
+            <td>{{enrollee.active}}</td>
+            <td>{{enrollee.name}}</td>
+            <td>{{enrollee.dateOfBirth}}</td>
+            <td>
+                <!-- the last column should be the update button-->
+                <!-- when the user clicks on it, we will call updateIndex(enrollee) so we know which enrollee needs to be updated -->
+                <button type="button" class="edit btn btn-default" aria-label="Left Align"
+                    (click)="updateIndex(enrollee)">
+                    <span class="fas fa-edit" aria-hidden="true"></span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
