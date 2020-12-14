@@ -1,6 +1,6 @@
 # EnrolleeFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4. The URL to call the API is defined in the environments file.
 
 ## Development server
 
